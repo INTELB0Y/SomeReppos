@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{%block content %}
+<a style="margin-top: 10px" class="btn btn-primary" href="{% url 'create' %}" role="button">Добавить</a>
+    <ul>
+        {% for book in books %}
+
+        <ol>
+            <a style="text-decoration: none; font-style: none;" href="#">{{book.full_name}}</a>
+            <a href="{% url 'update' book.pk %}" style="color: #b996ff; text-decoration: none; ">Апдате</a> / <a href="{% url 'delete' book.pk %}" style="color: #ff4545; text-decoration: none">Делете</a>
+        </ol>
+
+        {% endfor %}
+    </ul>
+
+{%endblock%}
